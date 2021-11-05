@@ -1,9 +1,9 @@
 import concurrent.futures, time, random, os
 
 #desired channel url
-channel_url = 'https://www.twitch.tv/yourchannelname'
+channel_url = 'https://www.twitch.tv/mixil6 '
 #number of viewer bots
-botcount = 10
+botcount = 120
 #path to proxies.txt file
 proxypath = "C:\Proxy\proxy.txt"
 #path to vlc
@@ -28,7 +28,7 @@ def randproxy(proxylist, botcount):
 
 #launches a viewer bot after a short delay
 def launchbots(proxy):
-    time.sleep(random.randint(5, 20))
+    time.sleep(random.randint(5, 50))
     os.system(f'streamlink --player={playerpath} --player-no-close --player-http  --hls-segment-timeout 30 --hls-segment-attempts 3 --retry-open 1 --retry-streams 1 --retry-max 1 --http-stream-timeout 3600 --http-proxy {proxy} {channel_url} worst')
 
 #calls the launchbots function asynchronously
